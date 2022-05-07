@@ -1,0 +1,19 @@
+{
+  "name": "mini_twitter_exercise",
+  "version": "1.0.0",
+  "description": "This project is a guided nodeJS training exercise on the Dyma platform.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wormav/mini_twitter_exercise.git"
+  },
+  "author": "Jérémy Lorette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wormav/mini_twitter_exercise/issues"
+  },
+  "homepage": "https://github.com/Wormav/mini_twitter_exercise#readme"
+}
