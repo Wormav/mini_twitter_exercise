@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Wormav/mini_twitter_exercise#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "mongodb": "^4.6.0",
+    "mongoose": "^6.3.3",
     "morgan": "^1.10.0",
     "pug": "^3.0.2"
   }
