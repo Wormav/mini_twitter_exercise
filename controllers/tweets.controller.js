@@ -1,8 +1,8 @@
-const Tweet = require("../database/models/tweet.model");
+const {getTweets , createTweet} = require("../queries/tweets.queries")
 
 exports.tweetList = async (req, res, next) => {
   try {
-    const tweets = await Tweet.find({}).exec();
+    const tweets = await 
     res.render("tweets/tweet-list", { tweets });
   } catch (e) {
     next(e);
@@ -16,9 +16,9 @@ exports.tweetNew = (req, res, next) => {
 exports.tweetCreate = async (req, res, next) => {
   try {
     const body = req.body;
-    const newTweet = new Tweet(body);
+    await createTweet(body);
     await newTweet.save();
-    res.redirect("/");
+    res.redirect("/tweets");
   } catch (e) {
     const errors = Object.keys(e.errors).map((key) => e.errors[key].message);
     res.status(400).render("tweets/tweet-form", { errors });

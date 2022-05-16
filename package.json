@@ -4,7 +4,8 @@
   "description": "This project is a guided nodeJS training exercise on the Dyma platform.",
   "main": "index.js",
   "scripts": {
-    "start": "PORT=4000 nodemon app.js",
+    "start": "NODE_ENV=development nodemon app.js",
+    "start:prod": "NODE_ENV=production nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/Wormav/mini_twitter_exercise#readme",
   "dependencies": {
+    "errorhandler": "^1.5.1",
     "express": "^4.18.1",
     "mongodb": "^4.6.0",
     "mongoose": "^6.3.3",
