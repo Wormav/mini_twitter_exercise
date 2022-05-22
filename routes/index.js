@@ -5,7 +5,7 @@ const users = require('./users.routes')
 
 
 router.use('/tweets', tweets);
-router.use('/user', users)
+router.use('/users', users)
 router.get('/', (req , res) => {
   res.redirect('/tweets')
 })
