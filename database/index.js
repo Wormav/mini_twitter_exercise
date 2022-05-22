@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const mongoURL = 'mongodb+srv://Wormav:qwe@cluster0.tl7kw.mongodb.net/twitter?retryWrites=true&w=majority'
 
 mongoose
   .connect(
-    'mongodb+srv://Wormav:qwe@cluster0.tl7kw.mongodb.net/twitter?retryWrites=true&w=majority',
+    mongoURL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -10,3 +11,5 @@ mongoose
   )
   .then(() => console.log('connexion db ok !'))
   .catch((err) => console.log(err));
+
+module.exports = mongoURL ;
