@@ -1,4 +1,4 @@
-const User = require("../database/models/user.model");
+const User = require('../database/models/user.model');
 
 exports.createUser = async (user) => {
   try {
@@ -7,19 +7,19 @@ exports.createUser = async (user) => {
       username: user.username,
       local: {
         email: user.email,
-        password: hashedPassword,
-      },
-    });
+        password: hashedPassword
+      }
+    })
     return newUser.save();
-  } catch (e) {
+  } catch(e) {
     throw e;
   }
-};
+}
 
 exports.findUserPerEmail = (email) => {
-  return User.findOne({ "local.email": email }).exec();
-};
+  return User.findOne({ 'local.email': email }).exec();
+}
 
 exports.findUserPerId = (id) => {
-  return User.findById(id).exec()
+  return User.findById(id).exec();
 }
