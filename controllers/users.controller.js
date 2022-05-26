@@ -39,7 +39,7 @@ exports.uploadImage = [
   async (req, res, next) => {
     try {
       const user = req.user;
-      user.avatar = `/images/avatars${req.file.filename}`;
+      user.avatar = `/images/avatars/${req.file.filename}`;
       await user.save();
       res.redirect("/");
     } catch (e) {
