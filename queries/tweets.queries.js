@@ -21,10 +21,10 @@ exports.updateTweet = (tweetId, tweet) => {
   return Tweet.findByIdAndUpdate(tweetId, { $set: tweet }, { runValidators: true });
 }
 
-exports.getCurrentUserTweetWithFollowing = (user) => {
-  return Tweet.find({ author: {$in : [...user.following, user._id]}}).exec()
+exports.getCurrentUserTweetsWithFollowing = (user) => {
+  return Tweet.find({ author: { $in: [ ...user.following, user._id ] }}).populate('author').exec();
 }
 
-exports.getUserTweetsFromUsername = (authorId) => {
-  return Tweet.find({ author: authorId}).exec()
+exports.getUserTweetsFormAuthorId = (authorId) => {
+  return Tweet.find({ author: authorId }).populate('author').exec();
 }
