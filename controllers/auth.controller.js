@@ -21,6 +21,6 @@ exports.signin = (req, res, next) => {
 }
 
 exports.signout = (req, res, next) => {
-  req.logOut(function () { console.log('Done logging out.'); });
+  req.logout();
   res.redirect('/auth/signin/form');
 }
